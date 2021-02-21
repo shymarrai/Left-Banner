@@ -20,9 +20,11 @@
 
     <p class="info">Hello fellow shoppers! We're currently building our new fashion store. 
     Add your email below to stay up-to-date with announcements and our launch deals.</p>
-  <input type="email" placeholder="Email Address">
-  <button class="send">></button>
-  
+  <div class="input-button">
+    <input type="email" placeholder="Email Address" onclick="missErro()">
+    <button class="send"><img src="images/icon-arrow.svg" alt="Erro" onclick="erro()"></button>
+    <p id="erro">Please Provide a valid email</p>
+  </div>
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
@@ -30,17 +32,15 @@
     </p>
   </footer>
   <script>
-    var documentWidth = document.documentElement.offsetWidth;
+    function erro(){
+      let message = document.getElementById('erro')
+      message.style.visibility = "visible"
 
-    [].forEach.call(
-    document.querySelectorAll('*'),
-      function(el){
-         if(el.offsetWidth > documentWidth){
-          console.log(el);
-        }
     }
- );
-
+    function missErro(){
+      let message = document.getElementById('erro')
+      message.style.visibility = "hidden"
+    }
   </script>
 </body>
 </html>

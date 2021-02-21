@@ -7,6 +7,7 @@ body{
     width: 90vw; 
     color:linear-gradient(135deg,hsl(0, 0%, 100%),hsl(0, 100%, 98%));
 }
+
 .banner-mobile{
     width: 100vw;
     margin: 0;
@@ -18,7 +19,7 @@ body{
     display:none;
 }
 .logo{ 
-    margin: 3rem 2rem 2rem ;
+    margin: 1.5rem ;
     width: 30vw;
 }
 .info{ 
@@ -36,7 +37,7 @@ body{
 h1{ 
     font-size:2.5rem;
     text-align: center;
-    margin: 3.5rem 0 1rem 0;
+    margin: 1.5rem 0 1rem 0;
     font-weight: 600;
     
     text-transform: uppercase;
@@ -54,17 +55,27 @@ input{
     box-sizing: border-box;
     border: 1px solid hsl(0, 36%, 70%);
     color: hsl(0, 36%, 70%);
+    
 }
+input:invalid{
+    background: url("./images/icon-error.svg") no-repeat 80% center;
+    
+}
+
 input::placeholder{
     color: hsl(0, 36%, 70%);
 }
-
+nput:focus{
+    height: 3rem;
+    margin: 0;
+}
 button.send{
     height: 3rem;
     width:4rem;
-    position:absolute;
-    top: 84%;
-    left: 70%;
+    display: inline-block;
+    position: relative;
+    top: -80px;
+    left: 80%;
     z-index: 1;
     border:none;
     border-radius: 40px;
@@ -74,18 +85,29 @@ button.send{
     font-weight:300;
     text-transform:uppercase;
     cursor:pointer;
-    transition: all .5;
+    transition: all .5s;
 }
-
 
 .contrast{ 
-    
     font-weight: 300;
     color:hsl(0, 36%, 70%);
-
+}
+#erro{
+    position: relative;
+    bottom:70px;
+    z-index: 9999;
+    left: 10%;
+    margin:0;
+    padding:0;
+    color: hsl(0, 36%, 70%);
+    visibility: hidden;
 }
 
-.attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0; padding:2rem; background:#fff;}
+
+.input-button{
+    height: 3rem;
+}
+.attribution { font-size: 11px; text-align: center; position: fixed;padding:2rem; background:#fff; box-sizing: border-box; bottom:0;}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media(min-width:600px){
@@ -109,22 +131,37 @@ button.send{
         margin: 3rem 10rem ;
     }
     button.send{ 
-        position: absolute;
-        top:34.1rem;
-        left: 34rem;
+        display: inline-block;
+        position: relative;
+        top:-80px;
+        left: 85%;
         width: 5rem;
-        transition: all .5;
+        transition: all .5s;
     }
     .send:hover{
+        top:-85px;
         width:5.5rem;
         height:3.5rem;
-        top:34rem;
-        left: 34rem;
+        display: inline-block;
+        position: relative;
+    }
+    #erro{
+        position: relative;
+        bottom:150%;
+        left: 10%;;
+        margin:0;
+        padding:0;
+        color: hsl(0, 36%, 70%);
+        visibility: hidden;
     }
     input{
         width: 30vw;
-        margin-left: 10rem;
     }
+    input:invalid{
+        background: url("./images/icon-error.svg") no-repeat 80% center;
+        
+    }
+
     .info{
         width: 31vw;
         text-align: left;
@@ -132,6 +169,15 @@ button.send{
         align-items:center;
         justify-content: center;
         margin: 0 0 0 9rem;
+    }
+    .input-button{
+        
+        width:30vw;
+        margin-left: 10rem;
+        margin-top:1rem;
+        padding:0;
+        height:3rem;
+  
     }
     h1{
         font-size:5rem;
